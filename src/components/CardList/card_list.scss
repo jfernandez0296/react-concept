@@ -1,0 +1,6 @@
+@import "../../styles/mixings.scss";
+
+.card-list{
+    @include flex();
+
+}

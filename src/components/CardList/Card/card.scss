@@ -1,0 +1,23 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixings.scss";
+
+.card{
+    width: 33%;
+    border:1px solid $secondaryColor;
+    border-radius: 5px;
+@include flex(flex,space-around);
+    padding: 24px;
+    // .card_img
+    &_img{
+        width: 50%;
+        border:1px solid black;
+        //img:hover
+        img {
+            width:100%;
+        &:hover{ 
+            transform: scale(1.1);
+        }
+        }
+
+    }
+}
