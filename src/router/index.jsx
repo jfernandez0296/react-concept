@@ -15,6 +15,10 @@ const router = createBrowserRouter([
     path: "/rickandmorty",
     element: <RickAndMorty />,
   },
+  {
+    path: "/rickandmorty/:id",
+    element: <RAMDetails/>,
+  },
 
 ]);
 

@@ -1,10 +1,19 @@
-import logo from './logo.svg';
-
+import React from 'react';
 import { CustomRouter } from './router';
 import Loader from './components/Loader/Loader';
 import { useState } from 'react';
 
 import './App.scss';
+
+const initialContext={
+  rickAndMorty:{
+    characters:[],
+  }
+  ,pokemon:{
+    characters:[],
+  }
+}
+const Context =React.createContext(initialContext);
 
 function App() {
 
@@ -24,11 +33,15 @@ function App() {
     
   }
   return (
+    <Context.Provider
+      store={initialContext}
+    >
     <div className="App">
 
       <CustomRouter/>
 
     </div>
+    </Context.Provider>
   );
 }
 
