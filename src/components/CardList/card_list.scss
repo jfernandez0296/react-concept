@@ -1,6 +1,7 @@
-@import "../../styles/mixings.scss";
-
+@import "../../styles/mixins.scss";
+@import "../../styles/global.scss";
 .card-list{
-    @include flex();
+    @include flexbox();
+    @extend .flex-wrap;
 
 }
