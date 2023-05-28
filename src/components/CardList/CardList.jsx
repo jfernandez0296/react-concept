@@ -7,7 +7,7 @@ import "./card_list.scss";
 const CardList = ({ list }) => {
   const navigate = useNavigate();
   const context = useContext(Context);
-  const redirectDetailsRoute = context ? context.redirectDetailsRoute : '';
+  const { redirectDetailsRoute } = context;
   
   const goToDetails = (id) => {
     // redirect to details

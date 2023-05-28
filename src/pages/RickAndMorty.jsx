@@ -2,7 +2,7 @@ import React, { useEffect, useState,useContext } from "react";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import {CardList}  from "../components/CardList";
+import { CardList } from "../components/CardList";
 import { Context } from "../context";
 
 const RickAndMorty = () => {

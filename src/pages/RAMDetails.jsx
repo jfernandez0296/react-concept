@@ -1,21 +1,28 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect,useState} from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../context";
 
 const RAMDetails=()=>{
-    const {id:idParam}=useParams();
-    const context=useContext(Context);
-    console.log("Context in details",context);
-
-    const {rickAndMorty}=context || {};
-    const {characters}=rickAndMorty || [];
+    const [character, setCharacter] = useState({});
+    const { id: idParam } = useParams();
+    const context = useContext(Context);
+    const { rickAndMorty } = context || {};
+    const { characters } = rickAndMorty || [];
 
     useEffect(()=>{
-        const character=characters.filter((item)=> item.id==+idParam);
-        console.log("character",character);
+        const item = characters.find((item)=> item.id === +idParam);
+        setCharacter(item);
     },[]);
     
-    return <div>RAMDetails: {idParam}</div>
-};
+    return (
+        <div>
+            <strong> Id: </strong>{character.id}
+            <strong> Species: </strong>{character.species}
+            <strong> Gender: </strong>{character.gender}
+            <strong> Name:</strong> {character.name}
+            <strong> Status: </strong>{character.status}
+            <img src={character.image} alt="" />
+         </div>
+    )};
 
 export default RAMDetails;
