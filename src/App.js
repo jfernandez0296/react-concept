@@ -2,18 +2,11 @@ import React from 'react';
 import { CustomRouter } from './router';
 import Loader from './components/Loader/Loader';
 import { useState } from 'react';
-
+import { Context, initialContext} from './context';
 import './App.scss';
 
-const initialContext={
-  rickAndMorty:{
-    characters:[],
-  }
-  ,pokemon:{
-    characters:[],
-  }
-}
-const Context =React.createContext(initialContext);
+
+
 
 function App() {
 
