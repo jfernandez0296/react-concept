@@ -4,6 +4,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { CardList } from "../components/CardList";
 import { Context } from "../context";
+import Loader from "../components/Loader/Loader";
 
 const RickAndMorty = () => {
 
@@ -36,8 +37,11 @@ const RickAndMorty = () => {
   return (
     <>
       <Header>Header</Header>
-      {loader && <div> Loading...</div>}
-      <CardList list={characters}/>
+      {characters.length === 0 ? ( // Si no hay personajes cargados, muestra el Loader
+        <Loader />
+      ) : (
+        <CardList list={characters} />
+      )}
       <Footer>Footer</Footer>
     </>
   );
